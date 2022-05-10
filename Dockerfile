@@ -28,4 +28,7 @@ RUN echo "cargo fuzz build" >> ./run-fuzzer.sh
 RUN ./run-fuzzer.sh
 
 # Run
-CMD ["cargo", "fuzz", "run", "compile", "./corpus", "./seeds"]
+RUN echo "#!/bin/bash" > /fuzzme
+RUN echo "cd /tectonic/fuzz && cargo fuzz run compile ./corpus ./seeds" >> /fuzzme
+RUN chmod +x /fuzzme
+CMD ["/fuzzme"]

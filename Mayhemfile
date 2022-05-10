@@ -1,8 +1,8 @@
 image: ghcr.io/zwimer/tectonic
 duration: 90
 project: mayhem-targets
-target: tectonic-cargo-fuzz
+target: fuzzme
 cmds:
-  - cmd: cd /tectonic/fuzz && cargo fuzz run compile ./corpus ./seeds
+  - cmd: /fuzzme
     libfuzzer: true
 
