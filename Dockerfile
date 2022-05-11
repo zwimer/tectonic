@@ -1,22 +1,8 @@
-FROM fuzzers/cargo-fuzz:0.10.0
-
-# Dependencies
-RUN apt-get update \
- && apt-get install -yq \
-	libfontconfig1-dev \
-	libgraphite2-dev \
-	libharfbuzz-dev \
-	libicu-dev \
-	libssl-dev \
-	zlib1g-dev \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
-# Rust
-RUN rustup default nightly
-RUN rustup update
+FROM ghcr.io/zwimer/tectonic:base
 
 # Source
+WORKDIR /
+RUN rm -rf /tectonic
 RUN git clone https://github.com/tectonic-typesetting/tectonic
 RUN cd tectonic && git submodule update --init
 
