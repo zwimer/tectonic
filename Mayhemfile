@@ -1,4 +1,4 @@
-image: ghcr.io/zwimer/tectonic:latest
+image: ghcr.io/zwimer/tectonic:mayhem
 duration: 90
 project: mayhem-targets
 target: fuzzme
