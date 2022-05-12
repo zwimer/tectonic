@@ -3,6 +3,6 @@ duration: 90
 project: mayhem-targets
 target: fuzzme
 cmds:
-  - cmd: /usr/local/cargo/bin/cargo fuzz run compile ./corpus ./seeds
+  - cmd: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile 
     libfuzzer: true
 

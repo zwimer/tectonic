@@ -13,4 +13,5 @@ RUN echo "cargo fuzz build" >> ./run-fuzzer.sh
 RUN ./run-fuzzer.sh
 
 # Run
-CMD ["cargo", "fuzz", "run", "compile", "./corpus", "./seeds"]
+# CMD ["cargo", "fuzz", "run", "compile", "./corpus", "./seeds"]
+CMD ["/tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile"]
