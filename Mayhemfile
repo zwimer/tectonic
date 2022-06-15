@@ -1,8 +1,7 @@
-image: ghcr.io/zwimer/tectonic:mayhem
 duration: 90
-project: mayhem-targets
-target: fuzzme
+project: tectonic
+target: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile
 cmds:
-  - cmd: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile 
+  - cmd: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile
     libfuzzer: true
 
