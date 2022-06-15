@@ -21,11 +21,10 @@ ADD . /tectonic
 RUN cd tectonic && git submodule update --init
 
 # Compile
-WORKDIR /tectonic/fuzz
-RUN sed -i '$ d' ./run-fuzzer.sh
-RUN echo "cargo fuzz build" >> ./run-fuzzer.sh
-RUN ./run-fuzzer.sh
+RUN test -x "${HOME}/.cargo/bin/cargo-fuzz" || cargo install cargo-fuzz
+WORKDIR /tectonic
+RUN mkdir ./fuzz/corpus
+RUN cargo fuzz build
 
 # Run
-# CMD ["cargo", "fuzz", "run", "compile", "./corpus", "./seeds"]
 CMD ["/tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile"]
