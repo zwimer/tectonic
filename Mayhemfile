@@ -1,7 +1,7 @@
 duration: 90
 project: tectonic
-target: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile
+target: fuzz_tectonic
 cmds:
-  - cmd: /tectonic/fuzz/target/x86_64-unknown-linux-gnu/release/compile
+  - cmd: /fuzz_tectonic
     libfuzzer: true
 
