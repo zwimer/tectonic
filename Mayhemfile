@@ -1,7 +1,6 @@
-duration: 90
 project: tectonic
-target: fuzz_tectonic
+target: compile
 cmds:
-  - cmd: /fuzz_tectonic
+  - cmd: /compile
     libfuzzer: true
 
